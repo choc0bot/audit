@@ -1,0 +1,54 @@
+<table>
+			<tr>
+				<td>
+					<label>Audit Date</label>
+				</td>
+				<td>
+					<input id="datepicker" class="ui-widget ui-state-default ui-corner-all ui-textinput" title="Click to access calendar"/>
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<label>Location</label>
+				</td>
+				<td>
+					<input id="Location" size="30" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="Location" title="Enter town or region" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Site Address</label>
+				</td>
+				<td>
+					<input id="SiteAddress" size="30" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="SiteAddress" title="Enter Full address with Postcode" />
+				</td>
+			</tr>
+			<tr>
+			      <td >Dept</td>
+      <td >
+      <select name="ceiling_type">
+      <option></option>
+      <option>DSE</option>
+      <option>DPI</option>
+      <option>DHS</option>
+      </select>
+      </td>
+    </tr>
+			<tr>
+				<td>
+					<label>GPS</label>
+				</td>
+
+<td>
+					<input id="GPS" name="GPS" class="ui-widget ui-state-default ui-corner-all ui-textinput" title="Latitude, Longitude"/>
+				</td>
+			</tr>		
+
+			<tr>
+				<td>
+					<p>
+					<a class="formbutton" href="#tab2"><span>Next</a>  
+					</p>
+				</td>
+			</tr>
+		</table>

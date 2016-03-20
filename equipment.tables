@@ -1,0 +1,48 @@
+	<button id="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"><a class="formbutton" id="equipment_add">Click Here to add an additional row</a></span></button>
+
+    <table id="equipment_table">
+      <tbody>
+        <tr>
+          <td>Rack</td>
+          <td>Name</td>
+          <td>Make</td>
+          <td>Model</td>
+          <td>Asset</td>
+          <td>Serial</td>
+          <td>Rack RU</td>
+        </tr>
+        <tr id="equip_row">
+          <td>		  <div class="ui-widget">
+            <select size = "5" id="combobox1">
+              <option selected="r1">R1</option>
+              <option value="r2">R2</option>
+              <option value="r3">R3</option>
+            </select>			</div>
+          </td>
+          <td>
+            <input name="name" id="textbox" class="ui-widget ui-state-default ui-corner-all ui-textinput" />
+          </td>
+          <td>
+            <div class="ui-widget">			<select id="equipment_drop">
+            <option>Cisco</option>
+            <option>APC</option>
+            <option>HP</option>
+            <option>Compaq</option>
+            <option>Juniper</option>			<option>NEC</option>
+          </select>		  </div>		  </td>
+          <td>
+            <select name='models' id='models'>			</select>		
+          </td>
+          <td>
+            <input name="asset" class="ui-widget ui-state-default ui-corner-all ui-textinput"/>
+          </td>
+          <td>
+            <input name="serial" class="ui-widget ui-state-default ui-corner-all ui-textinput"/>
+          </td>
+          <td>
+            <input name="rack_ru" size="3" class="ui-widget ui-state-default ui-corner-all ui-textinput"/>
+          </td>		  <td>		  <span id="delete_row" class="ui-icon ui-icon-circle-minus"></span>		  </td>
+        </tr>		
+      </tbody>
+    </table>
+
