@@ -1,1 +1,215 @@
-      <h3>Rack Details</h3><div id="accordion"><div class="wrap"><span class="accord">    <div class="block">      <label>Rack Identification</label>      <input size="30" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_rack_name">	</div>    <div class="block">      <label>Location</label>	  <input size="30" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_location">    </div>    <div class="block">      <label>Rack Model</label>            <input size="30" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_model">    </div>	    <div class="block">      Rack Dimensions </br>	  			RU			<input size="10" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_height_ru">			Width			<input size="10" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_width">			Depth			<input  size="10" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_depth">    </div>	    <div class="block">      Clearance from Walls / other racks with doors closed          <div class="block">            Left            <input size="5" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_clr_left">            Right            <input size="5" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_clr_left">                      Front			<input size="5" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_clr_left">                  Back            <input size="5" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_clr_left">          </div></div>	<div class="block">	<td>Percentage occupied</td>    <input type="text" size="2" class="ui-widget ui-state-default ui-corner-all ui-textinput" id="rack_percentage" value="50"  />%		<div id="slider_rack_percentage" style="width: 250px;" ></div>	</div>    <div class="block">      <label>Front Door details</label></br>	        				<div id="format">				<input id="check1" name="rack_fd_key_lock" type="checkbox"><label for="check1">Key Lock</label>				<input id="check2" name="rack_fd_mesh" type="checkbox"><label for="check2">Mesh</label>				<input id="check3" name="rack_fd_glass" type="checkbox"><label for="check3">Glass</label>				<input id="check4" name="rack_fd_metal" type="checkbox"><label for="check4">Metal</label>				</div>	</div>    <div class="block">    <label>Back Door details</label></br>				<div id="format1">				<input id="check5" name="rack_bd_key_lock" type="checkbox"><label for="check5">Key Lock</label>				<input id="check6" name="rack_bd_mesh" type="checkbox"><label for="check6">Mesh</label>				<input id="check7" name="rack_bd_glass" type="checkbox"><label for="check7">Glass</label>				<input id="check8" name="rack_bd_metal" type="checkbox"><label for="check8">Metal</label>				</div>    </div>    <div class="block">		<div id="format2">				<input id="check9" name="rack_bd_key_lock" type="checkbox"><label for="check9">Top cover</label>				<input id="check10" name="rack_bd_mesh" type="checkbox"><label for="check10">Extraction Fan</label>				<input id="check11" name="rack_bd_glass" type="checkbox"><label for="check11">Side Panel</label>				<input id="check12" name="rack_cable_management" type="checkbox"><label for="check12">Cable Managers</label>		</div>    </div>    <div class="block">      <label>Number of PDUs</label>      <div id="PDU_buttonset">				<input id="rdb1" name="toggler" type="radio" value="0"><label for="rdb1">0</label>				<input id="rdb2" name="toggler" type="radio" value="1"><label for="rdb2">1</label>				<input id="rdb3" name="toggler" type="radio" value="2"><label for="rdb3">2</label>		</div>	</div>	<div id="blk-1" class="toHide" style="display:none">	<div class="block">      PDU Details		<div class="block">        <label>Outlet Type</label></br>        	<div id="outlet_buttonset">				<input id="radio6" name="radio" type="radio"><label for="radio6">IEC</label>				<input id="radio7" name="radio" type="radio"><label for="radio7">Three pin</label>				<input id="radio8" name="radio" type="radio"><label for="radio8">Other</label>			</div>		</div>        <div class="block">            Number of Outlets            <input size="2"  class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_pdu_number_outlets">            In use            <input size="2"  class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_pdu_outlets_in_use">        </div>	</div>	</div>	<div id="blk-2" class="toHide" style="display:none">      PDU 1 Details		<div class="block">        <label>Outlet Type</label></br>        	<div id="pdu_1_buttonset">				<input id="radio9" name="radio2" type="radio"><label for="radio9">IEC</label>				<input id="radio10" name="radio2" type="radio"><label for="radio10">Three pin</label>				<input id="radio11" name="radio2" type="radio"><label for="radio11">Other</label>			</div>		</div>		        <div class="block">            Number of Outlets            <input size="2" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_pdu_1_number_outlets">            In use            <input size="2" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_pdu_1_outlets_in_use">        </div>      PDU 2 Details		<div class="block">        <label>Outlet Type</label></br>        	<div id="pdu_2_buttonset">				<input id="radio12" name="radio3" type="radio"><label for="radio12">IEC</label>				<input id="radio13" name="radio3" type="radio"><label for="radio13">Three pin</label>				<input id="radio14" name="radio3" type="radio"><label for="radio14">Other</label>			</div>		</div>        <div class="block">            Number of Outlets            <input size="2" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_pdu_2_number_outlets">            In use            <input size="2" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="rack_pdu_2_outlets_in_use">        </div>	</div>    <div class="block">      <p>General Comments</p><textarea class="ui-widget ui-state-default ui-corner-all ui-textinput" cols="60" rows="3" name="rack_general_comments"></textarea>    </div>	</span><span class="accord"><div>TEST 2</div></span><span class="accord"><div>TEST 3</div></span></div></div>
+
+
+<div id="accordion">
+  <div class="wrap">
+    <span class="accord">
+    <div class="block">
+      <label>Rack Identification</label>
+      <input size="30" class="form-control" name="rack_rack_name">
+	</div>
+<div class="block">
+  <label>Location</label>
+  <input size="30" class="form-control" name="rack_location">
+</div>
+<div class="block">
+  <label>Rack Model</label>
+  <input size="30" class="form-control" name="rack_model">
+</div>
+<div class="block">
+  <label>Rack Dimensions in RU</label>
+  <input size="10" class="form-control" name="rack_height_ru">
+  <label>Width</label>
+  <input size="10" class="form-control" name="rack_width">
+  <label>Depth</label>
+  <input size="10" class="form-control" name="rack_depth">
+</div>
+<div class="block">
+  <label>Clearance from Walls / other racks with doors closed
+    <div class="block">
+      <label>Left</label>
+      <input size="5" class="form-control" name="rack_clr_left">
+      <label>Right</label>
+      <input size="5" class="form-control" name="rack_clr_left">
+      <label>Front</label>
+      <input size="5" class="form-control" name="rack_clr_left">
+      <label>Back</label>
+      <input size="5" class="form-control" name="rack_clr_left">
+    </div>
+</div>
+<div class="block">
+  <label>Percentage occupied</label>
+  <input type="text" class="form-control" id="rack_percentage" value="50" />
+
+
+  <div id="slider_rack_percentage" style="width: 250px;"></div>
+
+</div>
+<h4>Rack details</h4>
+<div class="container col-xs-12 col-md-8 well bs-component">
+  <div class="row">
+    <div class="container col-xs-3">
+      <label for="check9">Top cover</label>
+    </div>
+    <div class="container col-xs-3">
+      <label for="check10">Extraction Fan</label>
+    </div>
+    <div class="container col-xs-3">
+      <label for="check11">Side Panel</label>
+    </div>
+    <div class="container col-xs-3">
+      <label for="check12">Cable Managers</label>
+    </div>
+    <div class="container col-xs-3">
+
+      <input id="check9" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+    </div>
+    <div class="container col-xs-3">
+      <input id="check10" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+    </div>
+    <div class="container col-xs-3">
+      <input id="check11" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+    </div>
+    <div class="container col-xs-3">
+      <input id="check12" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+
+    </div>
+  </div>
+</div>
+<h4>Front Door details</h4>
+<div class="container col-xs-12 col-md-8 well bs-component">
+  <div class="row">
+    <div class="container col-xs-3">
+    <label for="check1">Key Lock</label>
+    <input id="rack_fd_key_lock"  name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+  <div class="container col-xs-3">
+    <label for="check2">Mesh</label>
+    <input id="rack_fd_mesh"  name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+  <div class="container col-xs-3">
+    <label for="check3">Glass</label>
+    <input id="rack_fd_glass" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+  <div class="container col-xs-3">
+    <label for="check4">Metal</label>
+    <input id="rack_fd_metal" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+
+
+  </div>
+</div>
+</div>
+</br>
+  <h4>Back Door details</h4>
+  <div class="container col-xs-12 col-md-8 well bs-component">
+    <div class="row">
+      <div class="container col-xs-3">
+    <label for="check5">Key Lock</label>
+    <input id="rack_bd_key_lock" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+  <div class="container col-xs-3">
+    <label for="check6">Mesh</label>
+    <input id="rack_bd_mesh"name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+  <div class="container col-xs-3">
+    <label for="check7">Glass</label>
+    <input id="rack_bd_glass" name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+  <div class="container col-xs-3">
+    <label for="check8">Metal</label>
+    <input id="rack_bd_metal"name="my-checkbox" type="checkbox" data-off-text="No" data-on-text="Yes">
+  </div>
+</div>
+</div>
+
+<div class="block">
+  <h4>Number of PDUs</h4>
+  <div id="PDU_buttonset">
+    <input id="rdb1" name="toggler" type="radio" value="0">
+    <label for="rdb1">0</label>
+    <input id="rdb2" name="toggler" type="radio" value="1">
+    <label for="rdb2">1</label>
+    <input id="rdb3" name="toggler" type="radio" value="2">
+    <label for="rdb3">2</label>
+  </div>
+</div>
+
+<div id="blk-1" class="toHide" style="display:none">
+  <div class="block">
+    PDU Details
+    <div class="block">
+      <label>Outlet Type</label>
+      </br>
+      <div id="outlet_buttonset">
+        <input id="radio6" name="radio" type="radio">
+        <label for="radio6">IEC</label>
+        <input id="radio7" name="radio" type="radio">
+        <label for="radio7">Three pin</label>
+        <input id="radio8" name="radio" type="radio">
+        <label for="radio8">Other</label>
+      </div>
+    </div>
+    <div class="block">
+      Number of Outlets
+      <input size="2" class="form-control" name="rack_pdu_number_outlets"> In use
+      <input size="2" class="form-control" name="rack_pdu_outlets_in_use">
+    </div>
+  </div>
+</div>
+<div id="blk-2" class="toHide" style="display:none">
+  PDU 1 Details
+  <div class="block">
+    <label>Outlet Type</label>
+    </br>
+    <div id="pdu_1_buttonset">
+      <input id="radio9" name="radio2" type="radio">
+      <label for="radio9">IEC</label>
+      <input id="radio10" name="radio2" type="radio">
+      <label for="radio10">Three pin</label>
+      <input id="radio11" name="radio2" type="radio">
+      <label for="radio11">Other</label>
+    </div>
+  </div>
+
+  <div class="block">
+    Number of Outlets
+    <input size="2" class="form-control" name="rack_pdu_1_number_outlets"> In use
+    <input size="2" class="form-control" name="rack_pdu_1_outlets_in_use">
+  </div>
+  <label>PDU 2 Details<label>
+<div class="block">
+  <label>Outlet Type</label>
+  </br>
+  <div id="pdu_2_buttonset">
+    <input id="radio12" name="radio3" type="radio">
+    <label for="radio12">IEC</label>
+    <input id="radio13" name="radio3" type="radio">
+    <label for="radio13">Three pin</label>
+    <input id="radio14" name="radio3" type="radio">
+    <label for="radio14">Other</label>
+  </div>
+</div>
+<div class="block">
+  <label>Number of Outlets
+    <label>
+      <input size="2" class="form-control" name="rack_pdu_2_number_outlets"> In use
+      <input size="2" class="form-control" name="rack_pdu_2_outlets_in_use">
+</div>
+</div>
+<div class="block">
+  <label>General Comments
+    <label>
+      <textarea class="form-control" cols="60" rows="3" name="rack_general_comments"></textarea>
+</div>
+</span>
+    <span class="accord"><div>TEST 2</div></span>
+    <span class="accord"><div>TEST 3</div></span>
+  </div>
+  <a data-toggle="tab" class="btn btn-lg btn-primary btn-block" href="#rack">
+    Next
+  </a>
+</div>
+
+<script>
+  $("[name='my-checkbox']").bootstrapSwitch();
+</script>

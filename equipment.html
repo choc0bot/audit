@@ -1,44 +1,45 @@
 
-    <button id="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"
-    aria-disabled="false">
-      <span class="ui-button-text">
-        <a class="formbutton" id="equipment_add">Click to add more equipment</a>
-      </span>
+  <div class="container">
+    <button id="button" class="btn btn-primary" role="button" aria-disabled="false">
+      Add more equipment
     </button>
-      <div id="equipment_table">	  
-        <div class='block'  size = "100%">
-		Rack
-        <span class='ui-widget'>
-          <select  id=rack_name>
+    <div class='block' size="100%">
+      <label>Rack</label>
+      <span class='ui-widget'>
+      <select  id=rack_name class="form-control">
             <option selected='r1'>R1</option>
             <option value='r2'>R2</option>
             <option value='r3'>R3</option>
           </select>
-        </span>		Name		<input name='name' id='textbox' class='ui-widget ui-state-default ui-corner-all ui-textinput' /></br>
-		Make
-        <span class='ui-widget'>
-          <select id='equipment_drop'>
-            <option>Cisco</option>
-            <option>APC</option>
-            <option>HP</option>
-            <option>Compaq</option>
-            <option>Juniper</option>
-            <option>NEC</option>
-          </select>
-        </span>
-		Model
-        <select name='models' id='models'></select></br>
-		Asset
-        <input name='asset' class='ui-widget ui-state-default ui-corner-all ui-textinput' /> 
-        Serial
-		<input name='serial' class='ui-widget ui-state-default ui-corner-all ui-textinput' /> 
-        RU
-		<input name='rack_ru' size='3' class='ui-widget ui-state-default ui-corner-all ui-textinput' /> 			<span id='delete_row' class='ui-icon ui-icon-circle-minus'></span>
-      
-	  <div class='extra_equipment'>
-	  
-	  </div>
-	  
-	  </div>
-	  	  	  	  </div>
- 
+      </span>
+      <label>Name</label>
+      <input name='name' id='textbox' class="form-control" />
+      </br>
+      <label>Make</label>
+      <select id='equipment_drop' class="form-control">
+        <option>Cisco</option>
+        <option>APC</option>
+        <option>HP</option>
+        <option>Compaq</option>
+        <option>Juniper</option>
+        <option>NEC</option>
+      </select>
+      <label>Model</label>
+      <select name='models' id='models' class="form-control"></select>
+      </br>
+      <label>Asset</label>
+      <input name='asset' class="form-control" />
+      <label>Serial</label>
+      <input name='serial' class="form-control" />
+      <label>RU</label>
+      <input name='rack_ru' size='3' class="form-control" />
+      <span id='delete_row' class='ui-icon ui-icon-circle-minus'></span>
+    </div>
+    <a data-toggle="tab" class="btn btn-lg btn-primary btn-block" href="#rack">
+    Next
+  </a>
+  </div>
+
+  <script>
+    $("[name='my-checkbox']").bootstrapSwitch();
+  </script>

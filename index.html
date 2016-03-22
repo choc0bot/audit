@@ -1,39 +1,45 @@
 <!doctype html>
 
 <html lang="en">
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+ -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
 <!-- Custom styles for this template -->
-<link href="starter-template.css" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#home">Audit</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul id="tabs" class="nav navbar-nav" data-tabs="tabs">
-            <li class="active"><a data-toggle="tab" href="#home">General</a></li>
-            <li><a data-toggle="tab" href="#equipment">Equipment</a></li>
-            <li><a data-toggle="tab" href="#rack">Rack</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+<link href="/css/bootstrap-switch.min.css" rel="stylesheet">
+
+<link href="/css/starter-template.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#home">Audit</a>
       </div>
-    </nav>
-<div class="container col-xs-12 col-md-8">
-  <div class="tab-content">
-    <div id="home" class="active data-enter tab-pane">
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul id="tabs" class="nav navbar-nav" data-tabs="tabs">
+          <li class="active"><a data-toggle="tab" href="#home">General</a></li>
+          <li><a data-toggle="tab" href="#room">Room</a></li>
+          <li><a data-toggle="tab" href="#rack">Rack</a></li>
+          <li><a data-toggle="tab" href="#equipment">Equipment</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div class="container col-xs-12 col-md-8">
+    <div class="tab-content">
+      <div id="home" class="active data-enter tab-pane">
         <label>Location</label>
         <input id="Location" size="30" class="form-control" name="Location" title="Enter town or region" />
         <label>Site Address</label>
@@ -45,37 +51,41 @@
           <option>DHS</option>
         </select>
         <label>GPS</label>
-      </br>
+        </br>
         <input id="GPS" name="GPS" class="form-control" title="Latitude, Longitude" />
         <label></label>
-            <a data-toggle="tab" class="btn btn-lg btn-primary btn-block"   href="#equipment">
-              <span>Next</span>
-            </a>
-    </div>
-
-    <div id="equipment" class="tab-pane fade">
-        <h3>Menu 1</h3>
-        <p>Some content in menu 1.</p>
-    </div>
-    <div id="rack" class="tab-pane fade">
-        <h3>Menu 2</h3>
-        <p>Some content in rack</p>
+        <button class="btn btn-primary btn-block"><a data-toggle="tab" class="btn btn-primary btn-block" href="#room">
+              Next
+            </a></button>
+      </div>
+      <div id="room" class="tab-pane fade">
+      </div>
+      <div id="equipment" class="tab-pane fade">
+      </div>
+      <div id="rack" class="tab-pane fade">
+      </div>
     </div>
   </div>
-</div><!-- /.container -->
+  <!-- /.container -->
 
-<!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $('#tabs').tab();
-        $('#equipment').load('equipment.html');
-        $('#rack').load('racks.html');
-    });
-</script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="/js/bootstrap-switch.min.js"></script>
+  <script src="/js/audit.js"></script>
+  <script>
+  jQuery(document).ready(function ($) {
+          $('#tabs').tab();
+          $('#room').load('room.html');
+          $('#equipment').load('equipment.html');
+          $('#rack').load('racks.html');
+      });
+  </script>
+
+<!-- Latest compiled and minified JavaScript
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js " integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS " crossorigin="anonymous "></script>
+-->
   </body>
 </html>

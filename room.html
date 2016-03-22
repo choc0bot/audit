@@ -1,1 +1,145 @@
- 	  <h3>Server Room Environment</h3>	<div class="block">		<label>Room Name</label>		<input class="ui-widget ui-state-default ui-corner-all ui-textinput" size="30" name="room_name">	</p>	<label>Site Access Logs</label>	<div class="styled-select">      <select name="induction">      <option></option>      <option>Visitor Book</option>      <option>Log Book</option>      <option>Other</option>      </select>	  </div>    </div>		<div class="block">     <label>No of Racks in Room</label>		<input  id="rack_no_spinner" size="5" name="no_racks">	  Room Level		<input id="roomlevel_spinner" size="5" value="G" name="room_level">	</div>	<div class="block">      <label>Room Type</label>	  <div class="styled-select">      <select name="Room_Type">      <option selected="selected">Secured</option>      <option value="Unsecured">Unsecured /shared</option>      <option>other</option>      </select>	  </div>		 </p>	   <label>Room Access</label>	   <div class="styled-select">      <select name="room_access">      <option selected="selected"></option>      <option>key lock</option>      <option>swipe</option>      <option>other - add comment</option>      </select>	  </div>	</div>	<div class="block">      <label>Floor Type</label>	  <div class="styled-select">      <select name="floor_type">      <option selected="selected"></option>      <option>vinyl</option>      <option>carpet</option>      <option>concrete</option>      <option>raised</option>      <option>other - add comment</option>      </select>	  </div>		 </p>      <label>Ceiling Type</label>	  <div class="styled-select">      <select name="ceiling_type">      <option></option>      <option>solid</option>      <option>false (suspended)</option>      <option>other -add comment</option>      </select>	  </div>    </div>			<div class="block">     <label>Room Dimensions</label></br>	 </p>    <div>	Height	</div>    <input type="text" id="room_height" size="4" class="ui-widget ui-state-default ui-corner-all ui-textinput" />	<div id="slider_room_height" style="width: 300px;"></div>	<div>    Width	</div>    <input type="text" id="room_width" size="4" class="ui-widget ui-state-default ui-corner-all ui-textinput" /> 	<div id="slider_room_width" style="width: 300px;"></div>	<div>	Depth	</div>    <input type="text" id="room_depth" size="4" class="ui-widget ui-state-default ui-corner-all ui-textinput" /> 	<div id="slider_room_depth" style="width: 300px;"></div>	</div>			<div class="block">     <label>Door Dimensions</label></br>	</p>    Height    <input type="text" id="height" size="4" style="border: 0; color: #f6931f; font-weight: bold;" />    <div id="slider_door_height" style="width: 300px;"></div>    Width    <input type="text" id="width" size="4" style="border: 0; color: #f6931f; font-weight: bold;" />    <div id="slider_door_width" style="width: 300px;"></div>	</div>	    <div class="block">		<label>10 Amp Power Outlets</label>		Total<input id="10amp_spinner" name="10amp_total" size="5" />		Used<input id="10amp_used_spinner" name="10amp_used" size="5" />	</div>		<div class="block">		<label>15 Amp Power Outlets</label>		Total		<input id="15amp_spinner" name="15amp_total" size="5" />		Used		<input id="15amp_used_spinner" name="15amp_used" size="5" />    </div>			<div class="block">	  <input type="checkbox" id="room_fire_check" class="room_fire_check">	  <label for="room_fire_check" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">Fire Detection</label>	    <div class="room_fire_div">		</p>        Fire Detection/Suppression Type       <input size="50" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="fire_detection">    <p>Fire Detection/Suppression Brand / Model etc.</p>    <input size="50" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="fire_model">           </div>  	</div>		<div class="block">  	  	  <input type="checkbox" id="room_cooling_check" class="room_cooling_check">	   <label for="room_cooling_check" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">Room Cooling</label>	  	<div class="room_cooling_div">	</p>		<label>Type</label>		<select name="cooling_Type">      <option selected="selected" value="split">split system</option>      <option value="building">building</option>	  <option value="dedicated">dedicated</option>      <option>other</option>      </select>		</p>      <p>Room Cooling (Make and Model)</p>      <input size="50"  class="ui-widget ui-state-default ui-corner-all ui-textinput" name="aircon_type">      <p>Air Conditioning Capacity (KW / HP)</p>		<input size="50" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="aircon_capacity">		    </div>	  </td>	</div>	<div class="block">      <label>Other General Comments</label>	  <textarea cols="100" rows="3" class="ui-widget ui-state-default ui-corner-all ui-textinput" name="general_comments">	  </textarea>	</div>
+<div class="container">
+
+  <label>Room Name</label>
+
+  <input class="form-control" size="30" name="room_name">
+
+  </p>
+  <label>Site Access Logs</label>
+  <select name="induction" class="form-control">
+    <option></option>
+    <option>Visitor Book</option>
+    <option>Log Book</option>
+    <option>Other</option>
+  </select>
+
+  <label>No of Racks in Room</label>
+  <input id="rack_no_spinner" size="5" name="no_racks"> Room Level
+  <input id="roomlevel_spinner" size="5" value="G" name="room_level">
+  <p>
+    <label>Room Type</label>
+    <select name="Room_Type" class="form-control">
+      <option selected="selected">Secured</option>
+      <option value="Unsecured">Unsecured /shared</option>
+      <option>other</option>
+    </select>
+  </p>
+  <label>Room Access</label>
+  <select name="room_access" class="form-control">
+    <option selected="selected"></option>
+    <option>key lock</option>
+    <option>swipe</option>
+    <option>other - add comment</option>
+  </select>
+  <label>Floor Type</label>
+  <select name="floor_type" class="form-control">
+    <option selected="selected"></option>
+    <option>vinyl</option>
+    <option>carpet</option>
+    <option>concrete</option>
+    <option>raised</option>
+    <option>other - add comment</option>
+  </select>
+  <label>Ceiling Type</label>
+  <select name="ceiling_type" class="form-control">
+    <option></option>
+    <option>solid</option>
+    <option>false (suspended)</option>
+    <option>other -add comment</option>
+  </select>
+
+
+  <div class="block">
+    <label>Room Dimensions</label>
+    </br>
+    </p>
+    <div>
+      Height
+    </div>
+    <input type="text" id="room_height" size="4" class="form-control" />
+    <div id="slider_room_height" style="width: 300px;"></div>
+    <div>
+      Width
+    </div>
+    <input type="text" id="room_width" size="4" class="form-control" />
+
+    <div id="slider_room_width" style="width: 300px;"></div>
+    <div>
+      Depth
+    </div>
+    <input type="text" id="room_depth" size="4" class="form-control" />
+
+    <div id="slider_room_depth" style="width: 300px;"></div>
+
+  </div>
+
+
+  <div class="block">
+    <label>Door Dimensions</label>
+    </br>
+    </p>
+    <label>Height</label>
+    <input class="form-control">
+    <div id="slider_door_height" style="width: 300px;"></div>
+
+    <label>Width<label>
+    <input class="form-control" />
+    <div id="slider_door_width" style="width: 300px;"></div>
+  </div>
+
+
+  <div class="block">
+    <label>10 Amp Power Outlets</label>
+    <label>Total</label>
+    <input id="10amp_spinner" name="10amp_total" size="5" />
+    <label>Used</label>
+    <input id="10amp_used_spinner" name="10amp_used" size="5" />
+  </div>
+
+  <div class="block">
+    <label>15 Amp Power Outlets</label>
+    <label>Total</label>
+    <input id="15amp_spinner" name="15amp_total" size="5" />
+     <label>Used</label>
+    <input id="15amp_used_spinner" name="15amp_used" size="5" />
+  </div>
+
+
+  <div class="block">
+    <input type="checkbox" id="room_fire_check" class="room_fire_check">
+    <label for="room_fire_check" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">Fire Detection</label>
+
+    <div class="room_fire_div">
+      </p>
+      Fire Detection/Suppression Type
+      <input size="50" class="form-control" name="fire_detection">
+      <p>Fire Detection/Suppression Brand / Model etc.</p>
+      <input size="50" class="form-control" name="fire_model">
+    </div>
+  </div>
+
+
+  <input type="checkbox" id="room_cooling_check" class="room_cooling_check">
+  <label for="room_cooling_check" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">Room Cooling</label>
+
+  <div class="room_cooling_div">
+    </p>
+    <label>Type</label>
+    <select name="cooling_Type">
+      <option selected="selected" value="split">split system</option>
+      <option value="building">building</option>
+      <option value="dedicated">dedicated</option>
+      <option>other</option>
+    </select>
+    </p>
+    <p>Room Cooling (Make and Model)</p>
+    <input size="50" class="form-control" name="aircon_type">
+    <p>Air Conditioning Capacity (KW / HP)</p>
+    <input size="50" class="form-control" name="aircon_capacity">
+  </div>
+  </td>
+  <label>Other General Comments</label>
+
+  <textarea cols="100" rows="3" class="form-control" name="general_comments">
+  </textarea>
+</div>
