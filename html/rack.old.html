@@ -1,0 +1,186 @@
+  <div id="quipD" >
+    <uib-accordion ng-hide="rackAdded">
+      <uib-accordion-group heading=" {{ count }} total racks">
+        <uib-accordion close-others="oneAtATime">
+          <uib-accordion-group ng-repeat="rack in racks | filter:{rackName: ''}">
+            <uib-accordion-heading>
+              {{rack.rackName}}&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="javascript:void(0)" ng-click="delete(rack.id)"><i class="glyphicon glyphicon-remove-circle equip-remove"></i></a>
+              <a href="javascript:void(0)" ng-click="edit(rack.id)"><i class="pull-right glyphicon glyphicon-edit equip-edit"></i></a>
+            </uib-accordion-heading>
+              <rack-minimize></rack-minimize>
+          </uib-accordion-group>
+        </uib-accordion>
+      </uib-accordion-group>
+    </uib-accordion>
+  </div>
+  <form ng-submit="saveRack()">
+  <label>
+    Rack Name
+  </label>
+  <input class="form-control" ng-model="newrack.rackName" required>
+  <label>Location</label>
+  <select ng-model="newrack.rackLocation" class="form-control">
+    <option ng-repeat="roomname in roomnames" value='{{ roomname }}'>{{ roomname }}</option>
+  </select>
+  <div class="col-xs-6 right-gutter">
+    <label>Rack Make</label>
+    <input class="form-control" ng-model="newrack.rackMake">
+  </div>
+  <div class="col-xs-6 no-gutter">
+    <label>Rack Model</label>
+    <input class="form-control" ng-model="newrack.rackModel">
+  </div>
+  <div class="col-xs-12 spacer"></div>
+  <div class="col-xs-12">
+    <h4>Rack Dimensions</h4>
+  </div>
+  <div class="col-xs-4 right-gutter">
+    <label>RU</label>
+    <input type="number" class="form-control" ng-model="newrack.rackDimensionsRU">
+  </div>
+  <div class="col-xs-4 right-gutter">
+    <label>Width</label>
+    <input type="number" class="form-control" ng-model="newrack.rackDimensionsWidth">
+  </div>
+  <div class="col-xs-4 no-gutter">
+    <label>Depth</label>
+    <input type="number" class="form-control" ng-model="newrack.rackDimensionsDepth">
+  </div>
+  <div class="spacer col-xs-12" ></div>
+  <h4>Clearance ?</h4>
+  <div class="container col-xs-12 col-md-12 well bs-component">
+    <div class="container col-xs-6">
+      <label>Left</label>
+      <input type="number" class="form-control" ng-model="newrack.clearanceLeft">
+      <label>Right</label>
+      <input type="number" class="form-control" ng-model="newrack.clearanceRight">
+    </div>
+    <div class="container col-xs-6">
+      <label>Front</label>
+      <input type="number" class="form-control" ng-model="newrack.clearanceFront">
+      <label>Back</label>
+      <input type="number" class="form-control" ng-model="newrack.clearanceBack">
+    </div>
+  </div>
+  <div class="container col-xs-12 no-gutter">
+    <label>Percentage occupied</label>
+    <input type="number" class="form-control" ng-model="newrack.percentageOccupied"/>
+  </div>
+  <div class="container col-xs-12 no-gutter">
+  <h4>Rack details</h4>
+  <pre>{{newrack.rackTopCover}} - {{newrack.rackFan}} - {{newrack.rackSidePanels}} - {{newrack.rackCableManagement}}</pre>
+  <div class="container col-xs-12 well bs-component">
+    <div class="row">
+      <div class="container col-xs-6">
+        <label class="btn btn-default btn-sm">
+            <input ng-model="newrack.rackFan" type="checkbox" btn-checkbox>
+            Extraction Fan
+        </label>
+      </div>
+      <div class="container col-xs-6">
+        <label class="btn btn-default btn-sm">
+            <input ng-model="newrack.rackTopCover" type="checkbox" btn-checkbox>
+            Top cover
+        </label>
+      </div>
+      <div class="col-xs-12 spacer"></div>
+      <div class="container col-xs-6">
+        <label class="btn btn-default btn-sm">
+            <input ng-model="newrack.rackCableManagement" type="checkbox" btn-checkbox>
+            Cable Managers
+        </label>
+      </div>
+      <div class="container col-xs-6">
+        <label class="btn btn-default btn-sm">
+            <input ng-model="newrack.rackSidePanels" type="checkbox" btn-checkbox>
+            Side Panels
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container col-xs-12 no-gutter">
+  <h4>Front Door details</h4>
+  <div class="container col-xs-12 well bs-component">
+    <div class="row">
+      <div class="container col-xs-12">
+        <label for="check1">Key Lock</label>
+      </div>
+      <div class="container col-xs-5">
+        <label class="btn btn-default btn-sm">
+          <input ng-model="newrack.frontDoorKeyLock" type="checkbox">
+          Key Lock
+      </label>
+      </div>
+      <div class="container col-xs-7">
+        <div ng-model="newrack.frontDoorType" class="btn-group">
+          <label class="btn btn-default btn-sm" ng-model="newrack.frontDoorType" uib-btn-radio="'Mesh'">Mesh</label>
+          <label class="btn btn-default btn-sm" ng-model="newrack.frontDoorType" uib-btn-radio="'Glass'">Glass</label>
+          <label class="btn btn-default btn-sm" ng-model="newrack.frontDoorType" uib-btn-radio="'Metal'">Metal</label>
+          <label class="btn btn-default btn-sm" ng-model="newrack.frontDoorType" uib-btn-radio="'None'">None</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container col-xs-12 no-gutter">
+  <h4>Back Door details</h4>
+  <div class="container col-xs-12 well bs-component">
+    <div class="row">
+      <div class="container col-xs-5">
+        <label class="btn btn-default btn-sm">
+            <input ng-model="newrack.backDoorKeyLock" type="checkbox" btn-checkbox>
+            Key Lock
+        </label>
+      </div>
+      <div class="container col-xs-7">
+        <div class="btn-group">
+          <label class="btn btn-default btn-sm" ng-model="newrack.backDoorType" uib-btn-radio="'Mesh'">Mesh</label>
+          <label class="btn btn-default btn-sm" ng-model="newrack.backDoorType" uib-btn-radio="'Glass'">Glass</label>
+          <label class="btn btn-default btn-sm" ng-model="newrack.backDoorType" uib-btn-radio="'Metal'">Metal</label>
+          <label class="btn btn-default btn-sm" ng-model="newrack.backDoorType" uib-btn-radio="'None'">None</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container col-xs-12 no-gutter">
+    <h4>Number of PDUs</h4>
+    <div class="btn-group">
+      <label class="btn btn-default" ng-model="newrack.numberOfPdu" uib-btn-radio="0">0</label>
+      <label class="btn btn-default" ng-model="newrack.numberOfPdu" uib-btn-radio="1">1</label>
+      <label class="btn btn-default" ng-model="newrack.numberOfPdu" uib-btn-radio="2">2</label>
+    </div>
+  </div>
+  <div ng-show="newrack.numberOfPdu > 0">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <label>PDU 1 Details</label>
+      </div>
+      <pdu-details ng-model='$parent.ngModel'></pdu-details>
+    </div>
+  </div>
+
+  <div ng-show="newrack.numberOfPdu > 1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <label>PDU 2 Details</label>
+      </div>
+      <pdu-details ng-model='$parent.ngModel'></pdu-details>
+    </div>
+  </div>
+
+  <div class="col-xs-12 no-gutter">
+    <div class="col-xs-12 no-gutter">
+    <label>General Comments<label>
+    </div>
+    <textarea ng-model="newrack.rackComments" class="form-control" cols="60" rows="3"></textarea>
+  </div>
+  <div class="col-xs-12 spacer"></div>
+  <div class="col-xs-12 no-gutter">
+    <button id="button" class="btn btn-primary col-xs-12" type="submit">
+      Add rack
+    </button>
+  </div>
+</form>

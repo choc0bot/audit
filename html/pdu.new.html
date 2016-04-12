@@ -1,0 +1,52 @@
+<div class="panel-body" >
+  <div class="col-xs-3 no-gutter">
+      <label class="btn btn-default">
+          <input ng-model="newrack.iec" type="checkbox" btn-checkbox>
+          IEC
+      </label>
+  </div>
+  <div class="col-xs-5 no-gutter">
+      <label class="btn btn-default">
+          <input ng-model="newrack.iecFifteenAmp" type="checkbox" btn-checkbox>
+          IEC 15 amp
+      </label>
+  </div>
+  <div class="col-xs-4 no-gutter">
+    <label class="btn btn-default">
+        <input ng-model="newrack.threepPin" type="checkbox" btn-checkbox>
+      Three pin
+    </label>
+  </div>
+  <div class="col-xs-12 no-gutter">
+  </div>
+  <div ng-show="newrack.iec==true">
+    <div class="col-xs-6 right-gutter">
+      <label>IEC Outlets</label>
+      <input ng-model="newrack.iecOutlets" class="form-control" type="number">
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Used</label>
+      <input ng-model="newrack.iecUsed" class="form-control" type="number">
+    </div>
+  </div>
+  <div ng-show="newrack.iecFifteenAmp==true">
+    <div class="col-xs-6 right-gutter">
+      <label>IEC 15 Amp Outlets</label>
+      <input ng-model="newrack.iecFifteenAmpOutlets" class="form-control" type="number">
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Used</label>
+      <input ng-model="newrack.iecFifteenAmpUsed" class="form-control" type="number">
+    </div>
+  </div>
+  <div ng-show="newrack.threepPin==true">
+    <div class="col-xs-6 right-gutter">
+      <label>Three Pin Outlets</label>
+      <input ng-model="newrack.threepPinOutlets" class="form-control" type="number">
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Used</label>
+      <input ng-model="newrack.threepPinUsed" class="form-control" type="number">
+    </div>
+  </div>
+</div>

@@ -1,91 +1,92 @@
 <!doctype html>
+<html ng-app="audit">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="//cdn.jsdelivr.net/angular.initial-value/latest/angular-initial-value.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.5.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+      <script src="js/app.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
 
-<html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Latest compiled and minified CSS
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
- -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-<!-- Custom styles for this template -->
-<link href="/css/bootstrap-switch.min.css" rel="stylesheet">
-
-<link href="/css/starter-template.css" rel="stylesheet">
-
-</head>
-
-<body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#home">Audit</a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul id="tabs" class="nav navbar-nav" data-tabs="tabs">
-          <li class="active"><a data-toggle="tab" href="#home">General</a></li>
-          <li><a data-toggle="tab" href="#room">Room</a></li>
-          <li><a data-toggle="tab" href="#rack">Rack</a></li>
-          <li><a data-toggle="tab" href="#equipment">Equipment</a></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
+<body >
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/">Audit</a>
     </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="#/">General</a>
+        </li>
+        <li>
+          <a href="#room">Room</a>
+        </li>
+        <li>
+          <a href="#rack">Rack</a>
+        </li>
+        <li>
+          <a href="#equipment">Equipment</a>
+        </li>
+        <li>
+          <a href="#data">Data</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
   </nav>
-  <div class="container col-xs-12 col-md-8">
-    <div class="tab-content">
-      <div id="home" class="active data-enter tab-pane">
-        <label>Location</label>
-        <input id="Location" size="30" class="form-control" name="Location" title="Enter town or region" />
-        <label>Site Address</label>
-        <input id="SiteAddress" size="30" class="form-control" name="SiteAddress" title="Enter Full address with Postcode" />
-        <label>Dept</label>
-        <select name="ceiling_type" class="form-control">
-          <option>DSE</option>
-          <option>DPI</option>
-          <option>DHS</option>
-        </select>
-        <label>GPS</label>
-        </br>
-        <input id="GPS" name="GPS" class="form-control" title="Latitude, Longitude" />
-        <label></label>
-        <button class="btn btn-primary btn-block"><a data-toggle="tab" class="btn btn-primary btn-block" href="#room">
-              Next
-            </a></button>
-      </div>
-      <div id="room" class="tab-pane fade">
-      </div>
-      <div id="equipment" class="tab-pane fade">
-      </div>
-      <div id="rack" class="tab-pane fade">
-      </div>
+
+  <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main" class="container container col-xs-12 col-md-8">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
+
     </div>
-  </div>
-  <!-- /.container -->
 
-  <!-- Bootstrap core JavaScript
-================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="/js/bootstrap-switch.min.js"></script>
-  <script src="/js/audit.js"></script>
-  <script>
-  jQuery(document).ready(function ($) {
-          $('#tabs').tab();
-          $('#room').load('room.html');
-          $('#equipment').load('equipment.html');
-          $('#rack').load('racks.html');
-      });
-  </script>
 
-<!-- Latest compiled and minified JavaScript
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js " integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS " crossorigin="anonymous "></script>
+<!--
+    <uib-tabset class="tab-animation">
+      <uib-tab heading="General">
+        <div ng-include="'/html/general.html'"></div>
+      </uib-tab>
+      <uib-tab heading="Room">
+        <div ng-include="'/html/room.html'"></div>
+      </uib-tab>
+      <uib-tab heading="Rack">
+        <div ng-include="'/html/rack.html'"></div>
+      </uib-tab>
+      <uib-tab heading="Equipment">
+        <div class="col-xs-12 col-md-8">
+          <div ng-include="'/html/equipment.html'"></div>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <a data-toggle="tab" class="btn btn-lg btn-primary btn-block" href="#rack">
+            Next
+          </a>
+        </div>
+      </uib-tab>
+    </uib-tabset>
+</body>
 -->
-  </body>
+<!--
+<script src="/js/audit.js"></script>
+-->
+</body>
 </html>

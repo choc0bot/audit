@@ -1,0 +1,198 @@
+<div>
+  <div id="quipD" >
+    <uib-accordion>
+      <uib-accordion-group heading=" {{ count }} total rooms">
+        <uib-accordion close-others="oneAtATime">
+          <uib-accordion-group ng-repeat="room in rooms | filter:{roomName: ''}">
+            <uib-accordion-heading>
+              {{room.roomName}}&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="javascript:void(0)" ng-click="delete(room.id)"><i class="glyphicon glyphicon-remove-circle equip-remove"></i></a>
+              <a href="javascript:void(0)" ng-click="edit(room.id)"><i class="pull-right glyphicon glyphicon-edit equip-edit"></i></a>
+            </uib-accordion-heading>
+              <room-minimize></room-minimize>
+          </uib-accordion-group>
+        </uib-accordion>
+      </uib-accordion-group>
+    </uib-accordion>
+  </div>
+  <form ng-submit="saveroom()">
+  <label>Room Name</label>
+  <input ng-model="newroom.roomName"  type="text" class="form-control"/>
+
+  <div class="col-xs-12 spacer"></div>
+
+  <div class="container col-xs-12 col-md-12 well bs-component">
+    <div class="col-xs-6 right-gutter">
+      <label>Site Access Logs</label>
+      <select ng-model="newroom.roomLogs" name="induction" class="form-control">
+        <option></option>
+        <option>Visitor Book</option>
+        <option>Log Book</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Room Access</label>
+      <select ng-model="newroom.roomAccess" class="form-control">
+        <option selected="selected"></option>
+        <option>key lock</option>
+        <option>swipe</option>
+        <option>other - add comment</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-xs-12 spacer"></div>
+
+  <div class="container col-xs-12 col-md-12 well bs-component">
+    <div class="col-xs-6 right-gutter">
+      <label>Racks in room</label>
+      <input ng-model="newroom.roomNumberOfRacks" type="number" class="form-control">
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Room Level</label>
+      <input ng-model="newroom.roomLevel" class="form-control" value="G">
+    </div>
+    <div class="col-xs-6 right-gutter">
+      <label>Room Type</label>
+      <select ng-model="newroom.roomType" class="form-control">
+        <option selected="selected">Secured</option>
+        <option value="Unsecured">Unsecured /shared</option>
+        <option>other</option>
+      </select>
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Floor Type</label>
+      <select ng-model="newroom.floorType" class="form-control">
+        <option selected="selected"></option>
+        <option>vinyl</option>
+        <option>carpet</option>
+        <option>concrete</option>
+        <option>raised</option>
+        <option>other - add comment</option>
+      </select>
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Ceiling Type</label>
+      <select ng-model="newroom.ceilingType" class="form-control">
+        <option></option>
+        <option>solid</option>
+        <option>false (suspended)</option>
+        <option>other -add comment</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-xs-12 spacer"></div>
+
+  <div class="container col-xs-12 col-md-12 well bs-component">
+    <div class="col-xs-12 right-gutter">
+      <label>Room Dimensions</label>
+    </div>
+
+    <div class="col-xs-4 right-gutter">
+      Height
+      <input ng-model="newroom.roomDimensionsHeight" type="number" class="form-control"/>
+    </div>
+    <div class="col-xs-4 right-gutter">
+      Width
+      <input ng-model="newroom.roomDimensionsWidth" type="number" class="form-control"/>
+    </div>
+    <div class="col-xs-4 no-gutter">
+      Depth
+      <input ng-model="newroom.roomDimensionsDepth" type="number" class="form-control"/>
+    </div>
+
+    <div class="col-xs-12 right-gutter">
+      <label>Door Dimensions</label>
+    </div>
+    <div class="col-xs-6 right-gutter">
+      <label>Height</label>
+      <input initial-value ng-model="newroom.doorDimensionsHeight" type="number" value="2040" class="form-control">
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Width</label>
+      <input initial-value ng-model="newroom.doorDimensionsWidth" type="number" value="820" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="col-xs-12 spacer"></div>
+
+  <div class="container col-xs-12 col-md-12 well bs-component">
+    <div class="col-xs-12 no-gutter">
+      <label>10 Amp Power Outlets</label>
+    </div>
+    <div class="col-xs-6 right-gutter">
+      <label>Total</label>
+      <input ng-model="newroom.tenAmpOutletsTotal" type="number" class="form-control"/>
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Used</label>
+      <input ng-model="newroom.tenAmpOutletsUsed" type="number" class="form-control"/>
+    </div>
+
+    <div class="col-xs-12 right-gutter">
+      <label>15 Amp Power Outlets</label>
+    </div>
+    <div class="col-xs-6 right-gutter">
+      <label>Total</label>
+      <input ng-model="newroom.fifteenAmpOutletsTotal" type="number" class="form-control"/>
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Used</label>
+      <input ng-model="newroom.fifteenAmpOutletsUsed" type="number" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="col-xs-12 spacer"></div>
+
+  <div class="panel panel-default col-xs-12 no-gutter">
+    <div class="panel-heading">
+      <input ng-model="newroom.fireDetection" type="checkbox">
+      <button type="button" class="btn btn-default" ng-model="newroom.fireDetection" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+        Fire Detection
+      </button>
+    </div>
+    <div class="panel-body animate-show" ng-show="newroom.fireDetection">
+      Fire Detection/Suppression Type
+      <input ng-model="newroom.fireType" class="form-control" name="fire_detection">
+      Fire Detection/Suppression Brand / Model etc
+      <input ng-model="newroom.fireModel" class="form-control" name="fire_model">
+    </div>
+  </div>
+
+  <div class="col-xs-12 spacer"></div>
+
+  <div class="panel panel-default col-xs-12 no-gutter">
+    <div class="panel-heading">
+      <input ng-model="newroom.roomCooling" type="checkbox">
+      <button type="button" class="btn btn-default" ng-model="newroom.roomCooling" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+        Room Cooling
+      </button>
+    </div>
+    <div class="panel-body animate-show" ng-show="newroom.roomCooling">
+      <label>Type</label>
+      <select ng-model="newroom.coolingType" class="form-control">
+        <option selected="selected" value="split">split system</option>
+        <option value="building">building</option>
+        <option value="dedicated">dedicated</option>
+        <option>other</option>
+      </select>
+      <label>Room Cooling (Make and Model)</label>
+      <input ng-model="newroom.coolingModel" class="form-control">
+      <label>Air Conditioning Capacity (KW / HP)</label>
+      <input ng-model="newroom.coolingCapacity" type="number" class="form-control">
+    </div>
+  </div>
+
+  <div class="col-xs-12 no-gutter">
+    <label>Other General Comments</label>
+  </div>
+
+  <textarea ng-model="newroom.comments" cols="100" rows="3" class="form-control" name="general_comments"></textarea>
+  <div class="col-xs-12 spacer"></div>
+  <button id="button" class="btn btn-primary col-xs-12" type="submit">
+    Submit
+  </button>
+  </form>
+</div>

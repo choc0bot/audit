@@ -1,0 +1,85 @@
+<div>
+  <div id="quipD" >
+    <uib-accordion>
+      <uib-accordion-group heading=" {{ count }} total devices">
+        <uib-accordion close-others="oneAtATime">
+          <uib-accordion-group ng-repeat="equip in equipment | filter:{equipmentName: ''}">
+            <uib-accordion-heading>
+                {{equip.equipmentName}}&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0)" ng-click="delete(equip.id)"><i class="glyphicon glyphicon-remove-circle equip-remove"></i></a>
+                <a href="javascript:void(0)" ng-click="edit(equip.id)"><i class="pull-right glyphicon glyphicon-edit equip-edit"></i></a>
+            </uib-accordion-heading>
+              <equipment-minimize></equipment-minimize>
+          </uib-accordion-group>
+        </uib-accordion>
+      </uib-accordion-group>
+    </uib-accordion>
+  </div>
+  <form ng-submit="saveEquip()">
+    <div id="equip-details">
+      <label>Equipment Name</label>
+      <input ng-model="newequip.equipmentName" class="form-control" required/>
+      <div class="col-xs-6 col-md-4 no-gutter">
+        <label>Rack</label>
+      </div>
+      <div class="col-xs-6 col-md-4 left-gutter">
+        <label>RU</label>
+      </div>
+      <div class="col-xs-6 right-gutter">
+        <span class='ui-widget'>
+          <select ng-model="newequip.equipmentRack" class="form-control">
+            <option ng-repeat="rackname in racknames" value='{{ rackname }}'>{{ rackname }}</option>
+          </select>
+        </span>
+      </div>
+      <div class="col-xs-6 left-gutter">
+        <input ng-model="newequip.equipmentRu" type="number" class="form-control"/>
+      </div>
+      <div class="col-xs-6 no-gutter">
+        <label>Make</label>
+      </div>
+      <div class="col-xs-6 left-gutter">
+        <label>Model</label>
+      </div>
+      <div class="col-xs-6 right-gutter">
+        <select ng-model="newequip.equipmentMake" class="form-control">
+          <option>Cisco</option>
+          <option>APC</option>
+          <option>HP</option>
+          <option>Compaq</option>
+          <option>Juniper</option>
+          <option>NEC</option>
+        </select>
+      </div>
+      <div class="col-xs-6 left-gutter">
+        <select ng-model="newequip.equipmentModel" class="form-control">
+          <option>3750X</option>
+          <option>3945</option>
+          <option>3750</option>
+          <option>2950</option>
+        </select>
+      </div>
+      <div class="col-xs-12 no-gutter">
+        <label>Asset</label>
+      </div>
+      <div class="col-xs-12 no-gutter">
+        <input ng-model="newequip.equipmentAsset" class="form-control" value="CX00"/>
+      </div>
+      <div class="col-xs-12 no-gutter">
+        <label>Serial</label>
+      </div>
+      <div class="col-xs-12 no-gutter">
+        <input ng-model="newequip.equipmentSerial" class="form-control"/>
+      </div>
+      <div class="col-xs-12 spacer"></div>
+      <span id='delete_row' class='ui-icon ui-icon-circle-minus'></span>
+      <div class="col-xs-12" style="height:2px;"></div>
+    </div>
+    <div class="col-xs-12 col-md-8 no-gutter">
+      <input type="hidden" ng-model="newequip.id" />
+      <button id="button" class="btn btn-primary" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

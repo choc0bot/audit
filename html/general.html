@@ -1,0 +1,41 @@
+<div>
+  <form ng-submit="savesite()">
+    <label>Location</label>
+    <input ng-model="newsite.location"  type="text" class="form-control" required/>
+    <label>Street Address</label>
+    <input ng-model="newsite.address" type="text" class="form-control"/>
+    <div class="col-xs-6 no-gutter">
+      <label>Town / City</label>
+      <input ng-model="newsite.city" type="text" class="form-control"/>
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Postcode</label>
+      <input ng-model="newsite.postcode" type="number" class="form-control"/>
+    </div>
+    <label>Dept</label>
+    <select ng-model="newsite.department" class="form-control">
+      <option ng-repeat="department in departments" value="{{department.abbrev}}">
+        {{ department.abbrev }}
+      </option>
+    </select>
+    <label>GPS</label>
+    </br>
+    <div class="input-group double-input">
+      <!--
+      <input id="gps-field" ng-model="newsite.gps" type="text" class="form-control" title="Latitude, Longitude"/>
+    -->
+      <select ng-model="newsite.gps" class="form-control">
+      <option >
+        {{ gps }}
+      </option>
+    </select>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" value="Get Location" ng-click="getLocation()"/>GPS</button>
+      </span>
+    </div>
+    <div class="col-xs-12 spacer"></div>
+    <button id="button" class="btn btn-primary col-xs-12" type="submit">
+      Submit
+    </button>
+  </form>
+</div>

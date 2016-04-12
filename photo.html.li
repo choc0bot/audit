@@ -1,1 +1,0 @@
-		<ul>			<li>				<label for="ch_photo_building">Building (external)</label>				<input type="checkbox" name="building" name="photo_building" data-on="Yes" data-off="No" />			</li>		</ul>	

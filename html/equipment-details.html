@@ -1,0 +1,67 @@
+<div id="equipmentDiv" ng-controller="EquipmentController as EquipmentCtrl">
+  <div id="min-equip"></div>
+  <div id="equip-details" ng-show="equipmentDiv">
+    <label>Name</label>
+
+    <input ng-model="equipment.name" class="form-control"/>
+    <div class="col-xs-6 col-md-4 no-gutter">
+      <label>Rack</label>
+    </div>
+    <div class="col-xs-6 col-md-4 left-gutter">
+      <label>RU</label>
+    </div>
+    <div class="col-xs-6 right-gutter">
+      <span class='ui-widget'>
+        <select ng-model="equipment.rack" class="form-control">
+          <option selected='r1'>R1</option>
+          <option value='r2'>R2</option>
+          <option value='r3'>R3</option>
+        </select>
+      </span>
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <input ng-model="equipment.ru" type="number" class="form-control"/>
+    </div>
+    <div class="col-xs-6 no-gutter">
+      <label>Make</label>
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Model</label>
+    </div>
+    <div class="col-xs-6 right-gutter">
+      <select ng-model="equipment.make" class="form-control">
+        <option>Cisco</option>
+        <option>APC</option>
+        <option>HP</option>
+        <option>Compaq</option>
+        <option>Juniper</option>
+        <option>NEC</option>
+      </select>
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <select ng-model="equipment.model" class="form-control">
+        <option>3750X</option>
+        <option>3945</option>
+        <option>3750</option>
+        <option>2950</option>
+      </select>
+    </div>
+    <div class="col-xs-12 no-gutter">
+      <label>Asset</label>
+    </div>
+    <div class="col-xs-12 no-gutter">
+      <input ng-model="equipment.asset" class="form-control"/>
+    </div>
+    <div class="col-xs-12 no-gutter">
+      <label>Serial</label>
+    </div>
+    <div class="col-xs-12 no-gutter">
+      <input ng-model="equipment.serial" class="form-control"/>
+    </div>
+    <div class="col-xs-12 spacer"></div>
+    <pre>{{ equipment | json }}</pre>
+    <span id='delete_row' class='ui-icon ui-icon-circle-minus'></span>
+    <div class="col-xs-12" style="height:2px;"></div>
+  </div>
+  <div id="equipmentAddDiv"></div>
+</div>

@@ -1,0 +1,58 @@
+<div class="panel-body" ng-controller="PduController as PDUctrl">
+  <form ng-submit="">
+  <div class="col-xs-3 no-gutter">
+      <label class="btn btn-default">
+          <input ng-model="newpdu.iec" type="checkbox" btn-checkbox>
+          IEC
+      </label>
+  </div>
+  <div class="col-xs-5 no-gutter">
+      <label class="btn btn-default">
+          <input ng-model="newpdu.iecFifteenAmp" type="checkbox" btn-checkbox>
+          IEC 15 amp
+      </label>
+  </div>
+  <div class="col-xs-4 no-gutter">
+    <label class="btn btn-default">
+        <input ng-model="newpdu.threepPin" type="checkbox" btn-checkbox>
+      Three pin
+    </label>
+  </div>
+  <div class="col-xs-12 no-gutter">
+  </div>
+  <div ng-show="newpdu.iec==true">
+    <div class="col-xs-6 right-gutter">
+      <label>IEC Outlets</label>
+      <input ng-model="newpdu.iecOutlets" class="form-control" type="number">
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Used</label>
+      <input ng-model="newpdu.iecUsed" class="form-control" type="number">
+    </div>
+  </div>
+  <div ng-show="newpdu.iecFifteenAmp==true">
+    <div class="col-xs-6 right-gutter">
+      <label>IEC 15 Amp Outlets</label>
+      <input ng-model="newpdu.iecFifteenAmpOutlets" class="form-control" type="number">
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Used</label>
+      <input ng-model="newpdu.iecFifteenAmpUsed" class="form-control" type="number">
+    </div>
+  </div>
+  <div ng-show="newpdu.threepPin==true">
+    <div class="col-xs-6 right-gutter">
+      <label>Three Pin Outlets</label>
+      <input ng-model="newpdu.threepPinOutlets" class="form-control" type="number">
+    </div>
+    <div class="col-xs-6 left-gutter">
+      <label>Used</label>
+      <input ng-model="newpdu.threepPinUsed" class="form-control" type="number">
+    </div>
+  </div>
+  <pre>{{ newpdu | json }}</pre>
+  <button id="button" class="btn btn-primary col-xs-12" ng-click="savePdu()" >
+    Add PDU
+  </button>
+</form>
+</div>
